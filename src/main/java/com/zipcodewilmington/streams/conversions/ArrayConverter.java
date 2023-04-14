@@ -4,6 +4,7 @@ import com.zipcodewilmington.streams.anthropoid.Person;
 import com.zipcodewilmington.streams.anthropoid.PersonFactory;
 import com.zipcodewilmington.streams.anthropoid.PersonWarehouse;
 
+import java.sql.Array;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -27,16 +28,18 @@ public final class ArrayConverter extends PersonConversionAgent<Person[]> {
     //TODO
     public List<Person> toList() {
 
-        return null;
+        return Arrays.asList(objectSequence);
     }
 
     //TODO
     public Stream<Person> toStream() {
-        return null;
+
+        return Arrays.stream(objectSequence);
     }
 
     @Override
     public Person[] toArray() {
+
         return super.objectSequence;
     }
 }
